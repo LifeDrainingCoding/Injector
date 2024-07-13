@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lifedrained.injector.injector.Controller">
+   <children>
+      <VBox fx:id="vBox" prefWidth="600.0" style="-fx-background-color: E9E9E9;">
+          <children>
+              <MenuBar fx:id="menu_bar" visible="false" VBox.vgrow="NEVER">
+                  <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="New" />
+                              <MenuItem mnemonicParsing="false" text="Open…" />
+                              <Menu mnemonicParsing="false" text="Open Recent" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Close" />
+                              <MenuItem mnemonicParsing="false" text="Save" />
+                              <MenuItem mnemonicParsing="false" text="Save As…" />
+                              <MenuItem mnemonicParsing="false" text="Revert" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Preferences…" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Quit" />
+                          </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="Undo" />
+                              <MenuItem mnemonicParsing="false" text="Redo" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Cut" />
+                              <MenuItem mnemonicParsing="false" text="Copy" />
+                              <MenuItem mnemonicParsing="false" text="Paste" />
+                              <MenuItem mnemonicParsing="false" text="Delete" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Select All" />
+                              <MenuItem mnemonicParsing="false" text="Unselect All" />
+                          </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                          </items>
+                      </Menu>
+                  </menus>
+              </MenuBar>
+              <SplitPane dividerPositions="0.33121657754010686, 0.6871657754010694" focusTraversable="true">
+                  <items>
+                      <ScrollPane prefHeight="350.0" prefWidth="198.0">
+                          <content>
+                              <AnchorPane id="Content" minHeight="-1.0" minWidth="-Infinity" prefHeight="350.0" prefWidth="194.0" style="-fx-background-color: E9E9E9;">
+                                  <children>
+                                      <ListView fx:id="processList" layoutX="15.0" layoutY="28.0" prefHeight="200.0" prefWidth="171.0" />
+                                      <Button fx:id="updateList" layoutX="64.0" layoutY="228.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" text="Update list" />
+                                      <Label contentDisplay="CENTER" layoutX="21.0" layoutY="265.0" prefHeight="70.0" prefWidth="160.0" style="-fx-background-color: white; -fx-alignment: center;" text="Before reinjection: Make sure you've updated procces list by pressing &quot;update list&quot; button !" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                                      <Label contentDisplay="CENTER" layoutX="25.0" layoutY="4.0" prefHeight="20.0" prefWidth="150.0" style="-fx-background-color: white; -fx-alignment: center;" text="Process list" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                                  </children>
+                              </AnchorPane>
+                          </content>
+                      </ScrollPane>
+                      <AnchorPane prefWidth="20.0" style="-fx-background-color: E9E9E9;">
+                          <children>
+                              <Button fx:id="choose_dll_btn" layoutX="47.0" layoutY="160.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Choose dll path" AnchorPane.topAnchor="240.0" />
+                              <Button fx:id="injectbtn" layoutX="69.0" layoutY="254.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Inject" AnchorPane.topAnchor="205.0" />
+                              <ScrollPane layoutX="7.0" prefHeight="200.0" prefWidth="200.0">
+                                  <content>
+                                      <Label fx:id="path_lbl" alignment="TOP_LEFT" prefHeight="197.0" prefWidth="197.0" style="&#10;" text="dll path: " textOverrun="CLIP" wrapText="true">
+                                          <textFill>
+                                              <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
+                                          </textFill>
+                                      </Label>
+                                  </content>
+                              </ScrollPane>
+                        <Label fx:id="processNameLbl" alignment="TOP_LEFT" layoutX="9.0" layoutY="275.0" prefHeight="74.0" prefWidth="195.0" style="-fx-background-color: white;" text="process name:" wrapText="true" />
+                          </children>
+                      </AnchorPane>
+                      <AnchorPane style="-fx-background-color: E9E9E9;">
+                          <children>
+                              <ScrollPane fx:id="exception_pane" layoutX="14.0" layoutY="14.0" prefHeight="234.0" prefWidth="156.0">
+                                  <content>
+                                      <Label fx:id="exception_lbl" alignment="TOP_LEFT" disable="true" prefHeight="232.0" prefWidth="153.0" style="&#10;" visible="false" wrapText="true">
+                                          <font>
+                                              <Font size="11.0" fx:id="x7" />
+                                          </font>
+                                      </Label>
+                                  </content>
+                              </ScrollPane>
+                              <Button fx:id="copy_btn" disable="true" layoutX="43.0" layoutY="301.0" mnemonicParsing="false" text="copy exception" visible="false" />
+                          </children>
+                      </AnchorPane>
+                  </items>
+              </SplitPane>
+              <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="600.0" spacing="5.0">
+                  <children>
+                      <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Special created for Techno - " HBox.hgrow="ALWAYS">
+                          <font>
+                              <Font size="11.0" fx:id="x3" />
+                          </font>
+                          <textFill>
+                              <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+                          </textFill>
+                      </Label>
+                  <TextField fx:id="link" maxHeight="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefWidth="450.0" text="https://www.youtube.com/@TechnoKVofficial/videos" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+                  </children>
+               <padding>
+                  <Insets left="3.0" right="3.0" top="3.0" />
+               </padding>
+              </HBox>
+          </children>
+      </VBox>
+   </children>
+</Pane>
