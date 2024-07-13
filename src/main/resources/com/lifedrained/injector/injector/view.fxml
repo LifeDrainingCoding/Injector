@@ -103,6 +103,7 @@
                                   </content>
                               </ScrollPane>
                               <Button fx:id="copy_btn" disable="true" layoutX="43.0" layoutY="301.0" mnemonicParsing="false" text="copy exception" visible="false" />
+                        <Button fx:id="bp_loader" layoutX="9.0" layoutY="261.0" mnemonicParsing="false" text="Launch VAC bypasser loader" />
                           </children>
                       </AnchorPane>
                   </items>

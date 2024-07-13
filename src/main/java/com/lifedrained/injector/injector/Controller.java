@@ -31,7 +31,7 @@ public class Controller implements EventHandler<MouseEvent> {
     private ProcessData selectedProcess;
     private ProcessGainer processGainer;
     @FXML
-    private Button choose_dll_btn, injectbtn,copy_btn;
+    private Button choose_dll_btn, injectbtn,copy_btn, bp_loader;
     @FXML
     private Label path_lbl, exception_lbl,  processNameLbl;
     @FXML
@@ -42,7 +42,13 @@ public class Controller implements EventHandler<MouseEvent> {
     private Button updateList;
     @FXML
     private void initialize() {
-
+        bp_loader.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                VACBPloader vacbPloader = new VACBPloader();
+                vacbPloader.launchVACBP();
+            }
+        });
         processGainer = new ProcessGainer();
         processList.setItems(FXCollections.observableArrayList(processGainer.listProcesses()));
         updateList.setOnMouseClicked(new EventHandler<MouseEvent>() {
