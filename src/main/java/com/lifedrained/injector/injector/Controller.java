@@ -89,7 +89,7 @@ public class Controller implements EventHandler<MouseEvent> {
                                     Injector injector = new Injector();
                                     if(injector.inject(selectedProcess.getPid(), dll.getAbsolutePath())) {
                                         Alert alert =  new Alert(Alert.AlertType.CONFIRMATION,"", ButtonType.CLOSE);
-                                        alert.setTitle("Successfully injected!");
+                                        alert.setHeaderText("Successfully injected!");
                                         alert.show();
                                     }else {
                                         Alert alert1 = new Alert(Alert.AlertType.ERROR, "An error was occurred during injection process, " +
@@ -106,7 +106,7 @@ public class Controller implements EventHandler<MouseEvent> {
                         Injector injector = new Injector();
                         if(injector.inject(selectedProcess.getPid(), dll.getAbsolutePath())) {
                             Alert alert =  new Alert(Alert.AlertType.CONFIRMATION,"", ButtonType.CLOSE);
-                            alert.setTitle("Successfully injected!");
+                            alert.setHeaderText("Successfully injected!");
                             alert.show();
                         }else {
                             Alert alert1 = new Alert(Alert.AlertType.ERROR, "An error was occurred during injection process, " +
