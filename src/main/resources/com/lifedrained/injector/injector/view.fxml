@@ -18,9 +18,9 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lifedrained.injector.injector.Controller">
+<Pane fx:id="pane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lifedrained.injector.injector.Controller">
    <children>
-      <VBox fx:id="vBox" prefWidth="600.0" style="-fx-background-color: E9E9E9;">
+      <VBox fx:id="vBox" maxHeight="1.7976931348623157E308" prefWidth="600.0" style="-fx-background-color: E9E9E9;">
           <children>
               <MenuBar fx:id="menu_bar" visible="false" VBox.vgrow="NEVER">
                   <menus>
@@ -67,10 +67,11 @@
                           <content>
                               <AnchorPane id="Content" minHeight="-1.0" minWidth="-Infinity" prefHeight="350.0" prefWidth="194.0" style="-fx-background-color: E9E9E9;">
                                   <children>
-                                      <ListView fx:id="processList" layoutX="15.0" layoutY="28.0" prefHeight="200.0" prefWidth="171.0" />
-                                      <Button fx:id="updateList" layoutX="64.0" layoutY="228.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" text="Update list" />
+                                      <ListView fx:id="processList" layoutX="15.0" layoutY="28.0" prefHeight="173.0" prefWidth="171.0" />
+                                      <Button fx:id="updateList" layoutX="63.0" layoutY="232.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" text="Update list" />
                                       <Label contentDisplay="CENTER" layoutX="21.0" layoutY="265.0" prefHeight="70.0" prefWidth="160.0" style="-fx-background-color: white; -fx-alignment: center;" text="Before reinjection: Make sure you've updated procces list by pressing &quot;update list&quot; button !" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
                                       <Label contentDisplay="CENTER" layoutX="25.0" layoutY="4.0" prefHeight="20.0" prefWidth="150.0" style="-fx-background-color: white; -fx-alignment: center;" text="Process list" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                              <Button fx:id="findPGbtn" layoutX="42.0" layoutY="202.0" mnemonicParsing="false" text="Find PG3D process" />
                                   </children>
                               </AnchorPane>
                           </content>

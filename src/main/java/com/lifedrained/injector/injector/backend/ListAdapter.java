@@ -1,20 +1,17 @@
-package com.lifedrained.injector.injector;
+package com.lifedrained.injector.injector.backend;
 
-import javafx.event.EventHandler;
-import javafx.scene.control.ContentDisplay;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import org.apache.commons.io.FilenameUtils;
 
 public class ListAdapter extends ListCell<ProcessData> {
-    private HBox hbox;
-    private VBox vbox;
-    private Text pid,name;
-    private ImageView view;
+    public HBox hbox;
+    public VBox vbox;
+    public Text pid,name;
+    public ImageView view;
 
     public ListAdapter() {
         super();
@@ -34,15 +31,14 @@ public class ListAdapter extends ListCell<ProcessData> {
     @Override
     protected void updateItem(ProcessData data, boolean empty) {
         super.updateItem(data, empty);
-
+        if(!empty || data != null) {
             name.setText(data.getName());
             pid.setText(String.valueOf(data.getPid()));
-            if(data.getIcon()!=null) {
+
                 view.setImage(data.getIcon());
-                setGraphic(view);
-            }
+                setText(FilenameUtils.getName( data.getName())+"\n"+data.getPid());
 
-
+        }
     }
 
 

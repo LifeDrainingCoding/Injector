@@ -1,10 +1,9 @@
-package com.lifedrained.injector.injector;
+package com.lifedrained.injector.injector.backend;
 
+import com.lifedrained.injector.injector.jnainterfaces.Kernel32Ext;
 import com.sun.jna.Memory;
 import com.sun.jna.Native;
 import com.sun.jna.platform.win32.BaseTSD.DWORD_PTR;
-import com.sun.jna.platform.win32.Kernel32;
-import com.sun.jna.platform.win32.Psapi;
 import com.sun.jna.platform.win32.WinDef.*;
 import com.sun.jna.platform.win32.WinNT.*;
 import com.sun.jna.win32.W32APIOptions;
@@ -15,7 +14,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import static com.lifedrained.injector.injector.Singleton.*;
+import static com.lifedrained.injector.injector.backend.Singleton.*;
 
 public class Injector {
 

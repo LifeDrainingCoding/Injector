@@ -18,4 +18,8 @@ module com.lifedrained.injector.injector {
 
     opens com.lifedrained.injector.injector to javafx.fxml;
     exports com.lifedrained.injector.injector;
+    exports com.lifedrained.injector.injector.jnainterfaces;
+    opens com.lifedrained.injector.injector.jnainterfaces to javafx.fxml;
+    exports com.lifedrained.injector.injector.backend;
+    opens com.lifedrained.injector.injector.backend to javafx.fxml;
 }

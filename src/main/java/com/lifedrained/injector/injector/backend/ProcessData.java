@@ -1,4 +1,4 @@
-package com.lifedrained.injector.injector;
+package com.lifedrained.injector.injector.backend;
 
 import javafx.scene.image.Image;
 import org.apache.commons.io.FilenameUtils;

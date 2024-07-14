@@ -1,5 +1,5 @@
-package com.lifedrained.injector.injector;
-
+package com.lifedrained.injector.injector.backend;
+import com.lifedrained.injector.injector.jnainterfaces.*;
 import com.sun.jna.Memory;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
@@ -10,8 +10,6 @@ import javafx.scene.image.Image;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.swing.*;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;

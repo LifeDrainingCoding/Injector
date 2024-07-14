@@ -1,4 +1,4 @@
-package com.lifedrained.injector.injector;
+package com.lifedrained.injector.injector.jnainterfaces;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.WinDef.BOOL;

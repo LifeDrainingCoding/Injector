@@ -1,4 +1,4 @@
-package com.lifedrained.injector.injector;
+package com.lifedrained.injector.injector.backend;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
