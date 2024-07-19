@@ -38,7 +38,7 @@ public class ProcessGainer {
 
                     image = SwingFXUtils.toFXImage(icon, null);
                 } catch (Exception e){
-                    log.error(e);
+
                 }
                 ProcessData data =  new ProcessData(processName,pid,image, processPath);
                 if(!data.getName().equals("N/A")){

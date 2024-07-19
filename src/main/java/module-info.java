@@ -1,5 +1,5 @@
 module com.lifedrained.injector.injector {
-    requires javafx.controls;
+
     requires javafx.fxml;
     requires javafx.web;
 
@@ -15,6 +15,8 @@ module com.lifedrained.injector.injector {
     requires java.desktop;
     requires javafx.swing;
     requires org.apache.commons.io;
+    requires io.reactivex.rxjava3;
+    requires javafx.media;
 
     opens com.lifedrained.injector.injector to javafx.fxml;
     exports com.lifedrained.injector.injector;
@@ -22,4 +24,6 @@ module com.lifedrained.injector.injector {
     opens com.lifedrained.injector.injector.jnainterfaces to javafx.fxml;
     exports com.lifedrained.injector.injector.backend;
     opens com.lifedrained.injector.injector.backend to javafx.fxml;
+    exports com.lifedrained.injector.injector.controllers;
+    opens com.lifedrained.injector.injector.controllers to javafx.fxml;
 }

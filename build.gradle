@@ -2,12 +2,13 @@ plugins {
     id 'java'
     id 'application'
     id 'org.javamodularity.moduleplugin' version '1.8.12'
-    id 'org.openjfx.javafxplugin' version '0.0.13'
-    id 'org.beryx.jlink' version '2.25.0'
+    id("org.openjfx.javafxplugin") version "0.1.0"
+    id("org.beryx.jlink") version "3.0.1"
+    //id 'org.beryx.jlink' version '2.25.0'
 }
 
 group 'com.lifedrained.injector.injector'
-version '1'
+version '1.2'
 
 repositories {
     mavenCentral()
@@ -26,7 +27,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'com.lifedrained.injector.injector'
-    mainClass = 'com.lifedrained.injector.injector.HelloApplication'
+    mainClass = 'com.lifedrained.injector.injector.Main'
 }
 
 javafx {
@@ -35,6 +36,10 @@ javafx {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/io.reactivex.rxjava3/rxjava
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.8'
+
+
     implementation('com.dlsc.formsfx:formsfx-core:11.6.0') {
         exclude(group: 'org.openjfx')
     }

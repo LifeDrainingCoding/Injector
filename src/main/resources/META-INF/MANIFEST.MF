@@ -1,5 +1,5 @@
-Manifest-Version: 1.0
-Main-Class: com.lifedrained.injector.injector.HelloApplication
+Manifest-Version: 1.1
+Main-Class: com.lifedrained.injector.injector.Main
 Class-Path: junit-platform-engine-1.10.0.jar javafx-fxml-21-win.jar ikon
  li-javafx-12.3.1.jar ikonli-core-12.3.1.jar formsfx-core-11.6.0.jar jun
  it-platform-commons-1.10.0.jar javafx-swing-21-win.jar tilesfx-11.48.ja
