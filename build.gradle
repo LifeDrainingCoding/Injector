@@ -23,6 +23,7 @@ targetCompatibility = '17'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
+    options.debug = true
 }
 
 application {
@@ -41,11 +42,11 @@ dependencies {
 
 
     implementation('com.dlsc.formsfx:formsfx-core:11.6.0') {
-        exclude(group: 'org.openjfx')
+
     }
     implementation 'commons-io:commons-io:2.16.1'
     implementation('net.synedra:validatorfx:0.4.0') {
-        exclude(group: 'org.openjfx')
+
     }
     // https://mvnrepository.com/artifact/net.java.dev.jna/jna
     implementation 'net.java.dev.jna:jna:5.14.0'

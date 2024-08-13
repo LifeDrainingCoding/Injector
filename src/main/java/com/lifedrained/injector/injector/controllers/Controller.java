@@ -2,7 +2,6 @@ package com.lifedrained.injector.injector.controllers;
 
 
 
-import com.lifedrained.injector.injector.GuideScene;
 import com.lifedrained.injector.injector.Main;
 import com.lifedrained.injector.injector.backend.*;
 import com.lifedrained.injector.injector.backend.ProcessData;
@@ -50,9 +49,9 @@ public class Controller implements EventHandler<MouseEvent> {
     private MenuBar menu_bar;
 
     @FXML
-    private Button choose_dll_btn, injectbtn,copy_btn, bp_loader,findPGbtn;
+    private Button choose_dll_btn, injectbtn,findPGbtn;
     @FXML
-    private Label path_lbl, exception_lbl,  processNameLbl;
+    private Label path_lbl,   processNameLbl;
     @FXML
     private TextField link;
     @FXML
@@ -65,16 +64,7 @@ public class Controller implements EventHandler<MouseEvent> {
     @FXML
     private void initialize() {
         prepareMenus();
-        if(bp_loader!=null) {
 
-
-            bp_loader.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-
-                }
-            });
-        }
         processGainer = new ProcessGainer();
         processList.setItems(FXCollections.observableArrayList(processGainer.listProcesses()));
         processList.setCellFactory(new Callback<ListView<ProcessData>, ListCell<ProcessData>>() {
@@ -100,15 +90,7 @@ public class Controller implements EventHandler<MouseEvent> {
                 processNameLbl.setText("Selected process : "+ FilenameUtils.getName(selectedProcess.getName()));
             }
         });
-        copy_btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                Clipboard clipboard = Clipboard.getSystemClipboard();
-                ClipboardContent content = new ClipboardContent();
-                content.putString(exception_lbl.getText());
-                clipboard.setContent(content);
-            }
-        });
+
         findPGbtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -139,8 +121,7 @@ public class Controller implements EventHandler<MouseEvent> {
             }
         });
 
-        Singleton.getInstance().setCopyBtn(copy_btn);
-        Singleton.getInstance().setDebugLbl(exception_lbl);
+
         choose_dll_btn.setOnMouseClicked(this);
         injectbtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -168,7 +149,7 @@ public class Controller implements EventHandler<MouseEvent> {
             fileChooser.setTitle("Pick dll that you want to inject");
             FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("DLL files (*.dll)", "*.dll");
             fileChooser.getExtensionFilters().add(filter);
-              dll = new Dll( fileChooser.showOpenDialog(copy_btn.getScene().getWindow()));
+              dll = new Dll( fileChooser.showOpenDialog(injectbtn.getScene().getWindow()));
             updatePathLbl();
         }
     }
@@ -254,6 +235,7 @@ public class Controller implements EventHandler<MouseEvent> {
 
 
 public void prepareMenus() {
+        guide.getItems().clear();
     menu_bar.getMenus().clear();
     getInstance();
     File folder = lastDllFolder.toFile();
@@ -307,12 +289,8 @@ public void prepareMenus() {
     item.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-            GuideScene scene = new GuideScene();
-            try {
-                scene.start(new Stage());
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            HostServices hostServices = Main.hostServices;
+            hostServices.showDocument("https://youtu.be/V-G1UHb04ac");
         }
     });
     guide.getItems().add(item);
@@ -348,8 +326,14 @@ public void prepareMenus() {
     menu_bar.getMenus().add(guide);
 }
 private void updatePathLbl(){
-        if(dll !=null){
-            path_lbl.setText("Picked dll: "+dll.getDll().getAbsolutePath());
+        try {
+
+
+            if (dll != null) {
+                path_lbl.setText("Picked dll: " + dll.getDll().getAbsolutePath());
+            }
+        }catch (NullPointerException e){
+            System.out.println("no dll was picked");
         }
 }
 

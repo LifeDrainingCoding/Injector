@@ -48,7 +48,7 @@ public class Injector {
 			return false;
 		}
 
-		Pointer m = new Memory(dllName.length() + 1);
+		Pointer m = new Memory((dllName.length() + 1)*2L);
 		m.setString(0, dllName); 
 
 		boolean wpmSuccess = kernel32.WriteProcessMemory(hProcess, dllNameAddress, m, dllName.length(), null).booleanValue();

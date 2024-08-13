@@ -20,7 +20,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         hostServices = getHostServices();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("view.fxml"));
-         scene = new Scene(fxmlLoader.load(), 600, 420);
+         scene = new Scene(fxmlLoader.load(),460,420);
         stage.setTitle("Injector by Drained");
         stage.setScene(scene);
         stage.getIcons().add(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("assets/syringe_icon.svg.png"))));

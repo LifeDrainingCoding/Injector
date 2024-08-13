@@ -19,7 +19,7 @@
 
 <Pane fx:id="pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lifedrained.injector.injector.controllers.Controller">
    <children>
-      <VBox fx:id="vBox" maxHeight="1.7976931348623157E308" prefWidth="600.0" style="-fx-background-color: E9E9E9;">
+      <VBox fx:id="vBox" maxHeight="1.7976931348623157E308" style="-fx-background-color: E9E9E9;">
           <children>
               <MenuBar fx:id="menu_bar" VBox.vgrow="NEVER">
                   <menus>
@@ -32,7 +32,7 @@
                       <Menu fx:id="guide" mnemonicParsing="false" style="-fx-border-color: grey;" text="CLICK HERE IF DON'T KNOW HOW TO USE MY INJECTOR" />
                   </menus>
               </MenuBar>
-              <SplitPane dividerPositions="0.33121657754010686, 0.6871657754010694" focusTraversable="true">
+              <SplitPane dividerPositions="0.4383802816901408" focusTraversable="true">
                   <items>
                       <ScrollPane prefHeight="350.0" prefWidth="198.0">
                           <content>
@@ -47,7 +47,7 @@
                               </AnchorPane>
                           </content>
                       </ScrollPane>
-                      <AnchorPane prefWidth="20.0" style="-fx-background-color: E9E9E9;">
+                      <AnchorPane prefHeight="350.0" style="-fx-background-color: E9E9E9;">
                           <children>
                               <Button fx:id="choose_dll_btn" layoutX="47.0" layoutY="160.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Choose dll path" AnchorPane.topAnchor="240.0" />
                               <Button fx:id="injectbtn" layoutX="69.0" layoutY="254.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Inject" AnchorPane.topAnchor="205.0" />
@@ -63,23 +63,9 @@
                         <Label fx:id="processNameLbl" alignment="TOP_LEFT" layoutX="9.0" layoutY="275.0" prefHeight="74.0" prefWidth="195.0" style="-fx-background-color: white;" text="process name:" wrapText="true" />
                           </children>
                       </AnchorPane>
-                      <AnchorPane style="-fx-background-color: E9E9E9;">
-                          <children>
-                              <ScrollPane fx:id="exception_pane" layoutX="14.0" layoutY="14.0" prefHeight="234.0" prefWidth="156.0">
-                                  <content>
-                                      <Label fx:id="exception_lbl" alignment="TOP_LEFT" disable="true" prefHeight="232.0" prefWidth="153.0" style="&#10;" visible="false" wrapText="true">
-                                          <font>
-                                              <Font size="11.0" fx:id="x7" />
-                                          </font>
-                                      </Label>
-                                  </content>
-                              </ScrollPane>
-                              <Button fx:id="copy_btn" disable="true" layoutX="43.0" layoutY="301.0" mnemonicParsing="false" text="copy exception" visible="false" />
-                          </children>
-                      </AnchorPane>
                   </items>
               </SplitPane>
-              <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="600.0" spacing="5.0">
+              <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="40.0" spacing="5.0">
                   <children>
                       <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Special created for Techno - " HBox.hgrow="ALWAYS">
                           <font>
@@ -89,7 +75,7 @@
                               <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
                           </textFill>
                       </Label>
-                  <TextField fx:id="link" maxHeight="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefWidth="450.0" text="https://www.youtube.com/@TechnoKVofficial/videos" HBox.hgrow="ALWAYS">
+                  <TextField fx:id="link" maxHeight="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" text="https://www.youtube.com/@TechnoKVofficial/videos" HBox.hgrow="ALWAYS">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
